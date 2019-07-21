@@ -44,6 +44,8 @@ async function main() {
     identity: 'admin',
     wallet: wallet
   });
+  const network = await gateway.getNetwork('mychannel');
+  const contract = await network.getContract('Hopeful', 'org.rescueecontract');
 
   server.listen(8000, '172.29.0.1');
   server.on('connection', function(socket) { while(true){//This is a standard net.Socket
