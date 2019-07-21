@@ -1,0 +1,13 @@
+Our lambda analys
+https://e8jwxgd7hc.execute-api.eu-central-1.amazonaws.com/default/hack_madridSimple Lamda code for data analysimport jsonprint('Loading function')
+def myFunc(e):
+ return e['danger']def parse(data):
+   data_len = len(data)/3def lambda_handler(event, context):    x = event.get('body')
+   x = json.dumps(x)
+   x = str(x)
+   x =  x.split()    return {
+       'statusCode': 200,
+       'headers': { 'Content-Type': 'application/json' },
+       'body': json.dumps(x[0])
+   }    # Echo back the first key value
+   #raise Exception('Something went wrong')
